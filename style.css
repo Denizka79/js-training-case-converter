@@ -1,0 +1,17 @@
+textarea {
+    display: block;
+    width: 373px;
+    margin-bottom: 5px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
