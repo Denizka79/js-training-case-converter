@@ -3,6 +3,7 @@ let upperCaseButton = document.getElementById("upper-case");
 let lowerCaseButton = document.getElementById("lower-case");
 let properCaseButton = document.getElementById("proper-case");
 let sentenceCaseButton = document.getElementById("sentence-case");
+let saveTextFileButton = document.getElementById("save-text-file");
 
 upperCaseButton.addEventListener("click", function() {
     textAreaContent.value = textAreaContent.value.toUpperCase();
@@ -31,4 +32,16 @@ sentenceCaseButton.addEventListener("click", function() {
         }
         textAreaContent.value = textAreaWords.join(". ");
     }
+});
+
+saveTextFileButton.addEventListener("click", function(fleName,text) {
+    let element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', fleName);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+    // Start file download.
+    download("hello.txt","This is the content of my file :)");
 });
