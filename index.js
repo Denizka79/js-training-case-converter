@@ -34,14 +34,16 @@ sentenceCaseButton.addEventListener("click", function() {
     }
 });
 
-saveTextFileButton.addEventListener("click", function(fleName,text) {
+//let fName = "hello.txt";
+
+saveTextFileButton.addEventListener("click", function() {
     let element = document.createElement('a');
+    let text = textAreaContent.value;
+    let filename = "text.txt";
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', fleName);
+    element.setAttribute('download', filename);
     element.style.display = 'none';
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
-    // Start file download.
-    download("hello.txt","This is the content of my file :)");
 });
